@@ -32,11 +32,3 @@
   <citations>
   </citations>
 </tool>
-
-#NEEDS MODIFICATIONS!!! Command line option to specify safelist -s
-dest = "hyb_sites_safelist", fasta
-
-safelist = hyb_site_safelist.fasta
-outputs using this are: 
-	with_safelist_hyb_site_sequevars.fasta
-	with_safelist_hyb_sites_summary.txt
