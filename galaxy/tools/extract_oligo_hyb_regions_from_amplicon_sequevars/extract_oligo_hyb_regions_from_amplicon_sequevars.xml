@@ -1,0 +1,42 @@
+<tool id="extract_oligo_hyb_regions_from_amplicon_sequevars" name="Extract Oligo Hyb Regions From Amplicon Sequevars" version="0.0.1">
+  <requirements>
+    <requirement type="package" version="1.70">biopython</requirement>
+  </requirements>
+  <command detect_errors="exit_code"><![CDATA[
+    $__tool_directory__/extract_oligo_hyb_regions_from_amplicon_sequevars.py
+    '$input_fasta'
+    '$oligo_def_file'
+    '$output_fasta'
+    '$output_txt'
+  ]]></command>
+  <inputs>
+    <param name="input_fasta" format="fasta" type="data" />
+    <param name="oligo_fasta" format="fasta" type="data" />
+    <param name="blast_results" format="tabular" type="data" />
+  </inputs>
+  <outputs>
+      <data format="fasta" name="output_fasta"></data>
+      <data format="txt" name="output_txt"></data>
+  </outputs>
+  <tests>
+    <test>
+      <param name="input_fasta" value="99_amplicon-neg_FluA_H1N1.fasta" />
+      <param name="oligo_def_file" value="FluA_oligos.fasta" />
+      <output name="output_fasta" value="no_safelist_hyb_site_sequevars.fasta" />
+      <output name="output_txt" value="no_safelist_hyb_sites_summary.txt" />
+    </test>
+  </tests>
+  <help><![CDATA[
+    Extracts theoretical oligonucleotide hybridization sites from PCR amplicon sequences in a fasta file and outputs concatenated hybridization sites to fasta.
+  ]]></help>
+  <citations>
+  </citations>
+</tool>
+
+#NEEDS MODIFICATIONS!!! Command line option to specify safelist -s
+dest = "hyb_sites_safelist", fasta
+
+safelist = hyb_site_safelist.fasta
+outputs using this are: 
+	with_safelist_hyb_site_sequevars.fasta
+	with_safelist_hyb_sites_summary.txt

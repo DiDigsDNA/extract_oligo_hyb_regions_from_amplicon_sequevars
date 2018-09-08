@@ -1,0 +1,11 @@
+name: extract_oligo_hyb_regions_from_amplicon_sequevars
+owner: diane
+description: Extracts theoretical oligonucleotide hybridization sites from PCR amplicon sequences in a fasta file and outputs concatenated hybridization sites to fasta.
+homepage_url: https://github.com/DiDigsDNA/extract_oligo_hyb_regions_from_amplicon_sequevars
+long_description:  This program is the last in a series of python scripts screening for circulating strains of a target organism that, theoretically, may go undetected by lab-developed PCR assays.
+Using blastn results of a fasta file of amplicon sequences against the assay oligonucleotides and a fasta file of primers/probe, oligonucleotide hybridization sites are extracted
+from the amplicon sequence and concatenated in the correct order (i.e. forward primer - probe - reverse primer). Concatenated sequences are then organized into unique
+sequence grouping, in which sequevars map to lists of sequences containing the sequevar. These sequences can optionally be compared to a list of trusted sequences so that any sequences
+identical to those in the trusted 'safelist' will be ignored. The remainder are printed to fasta (with one representative sequence per sequevar grouping) as well as to a textual summary. 
+remote_repository_url: https://github.com/DiDigsDNA/extract_oligo_hyb_regions_from_amplicon_sequevars
+type: unrestricted

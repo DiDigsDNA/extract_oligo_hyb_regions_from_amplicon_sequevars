@@ -1,0 +1,67 @@
+---------------------------------------------------------------------------
+RESULTS OF SEARCH FOR EXACT MATCHES TO OLIGONUCLEOTIDES IN QUERY SEQUENCES:
+---------------------------------------------------------------------------
+
+Analysis as of: Fri Sep  7 16:59:22 2018
+
+Input Fasta: test-data/extract_oligo_hyb_regions_from_amplicon_sequevars/99_amplicon-neg_FluA_H1N1.fasta
+Oligonucleotides searched for: test-data/extract_oligo_hyb_regions_from_amplicon_sequevars/FluA_oligos.fasta
+Blast results file: test-data/extract_oligo_hyb_regions_from_amplicon_sequevars/Galaxy70-[blastn-short_99_amplicon-neg_FluA_H1N1.fasta_vs__FluA_oligos.fasta__].tabular
+Safelist file: test-data/extract_oligo_hyb_regions_from_amplicon_sequevars/hyb_site_safelist.fasta
+---------------------------------------------------------------------------
+11 Unique Sequevar(s) of Concatenated Oligo Hybridization Sites Found: 
+
+
+1 Record(s) with sequevar: GACCAATTCTGTCACCTCTGACCGTGCCAAGTGAGCGAGGACTGCACGTAGACGCTTTGTCCAAAATGCCC
+	KY925981
+
+2 Record(s) with sequevar: GACCAATCTTGTCACCTCTGACCGTGCCCAGTGAGCGAGGACTGCACGTAGACGCTTTGTCCAAAATGCCC
+	KY926040
+	KY926049
+
+1 Record(s) with sequevar: GACCAATCTTGTCACCTCTGACAGTGCCCAGTGAGCGAGGACTGCACGTAGACGCTTTATCCAAAATGCCC
+	KY926095
+
+5 Record(s) with sequevar: GACCAATTCTGTCACCTTTGACCGTGCCCAGTGAGCGAGGACTGCACGTAGACGCTTTGTCCAAAATGCCC
+	KY950187
+	KY950217
+	MF599433
+	MF599434
+	MF599438
+
+4 Record(s) with sequevar: GACCAATCCTGTCACCTCTGACCGTGCCCAGTGAGCGAGGACTGCACGTAGACGGTTTGTCCAAAACGCCC
+	MF039637
+	MF370249
+	MF370253
+	MF370257
+
+1 Record(s) with sequevar: GACCAATCCTGTCACCTCTGACCGTGCCCAGTGAGCGGGGACTGCACGTAGACGCTTTGTCCAAAATGCTC
+	MF039638
+
+1 Record(s) with sequevar: GACCAATTCTGTCACCTCTGACCGTGCCCAGTGAGCGAGGACTGCACGTAGACGTTTTGTCCAAAATGCCC
+	MF441160
+
+1 Record(s) with sequevar: GACCAATTCTGTCACCTCTGACCGTGCCCAGTGAGCGAGGACTGCACGTAGACGCTTTGTTCAAAATGCCC
+	MF441174
+
+1 Record(s) with sequevar: GACCAATCTTGTCACCTCTGACCGTGCCCAGTGAACGAGGACTGCACGTAGACGCTTTATCCAAAATGCCC
+	MF593488
+
+8 Record(s) with sequevar: GACCAATTCTGTCACCTTTGACCGTGCCAAGTGAGCGAGGACTGCACGTAGACGCTTTGTCCAAAATGCCC
+	MF599435
+	MF599436
+	MF599437
+	MF599439
+	MF599440
+	MF599441
+	MF599442
+	MF599443
+
+1 Record(s) with sequevar: GACCAATCTTGTCACCCCTGACCGTGCCCAGTGAGCGAGGACTGCACGTAGACGCTTTGTCCAAAATGCCC
+	MF629795
+---------------------------------------------------------------------------
+
+END OF RESULTS
+
+Results Summary (this file): test-data/extract_oligo_hyb_regions_from_amplicon_sequevars/with_safelist_hyb_sites_summary.txt
+Sequevars of concatenated oligo hybridization regions: test-data/extract_oligo_hyb_regions_from_amplicon_sequevars/with_safelist_hyb_site_sequevars.fasta
