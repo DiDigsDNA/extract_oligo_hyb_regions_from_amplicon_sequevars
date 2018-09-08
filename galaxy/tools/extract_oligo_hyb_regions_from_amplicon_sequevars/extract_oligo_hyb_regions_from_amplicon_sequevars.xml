@@ -5,7 +5,7 @@
   <command detect_errors="exit_code"><![CDATA[
     $__tool_directory__/extract_oligo_hyb_regions_from_amplicon_sequevars.py
     '$input_fasta'
-    '$oligo_def_file'
+    '$oligo_fasta'
     '$output_fasta'
     '$output_txt'
     #if $safe_list
@@ -25,7 +25,7 @@
   <tests>
     <test>
       <param name="input_fasta" value="99_amplicon-neg_FluA_H1N1.fasta" />
-      <param name="oligo_def_file" value="FluA_oligos.fasta" />
+      <param name="oligo_fasta" value="FluA_oligos.fasta" />
       <output name="output_fasta" value="no_safelist_hyb_site_sequevars.fasta" />
       <output name="output_txt" value="no_safelist_hyb_sites_summary.txt" />
     </test>
