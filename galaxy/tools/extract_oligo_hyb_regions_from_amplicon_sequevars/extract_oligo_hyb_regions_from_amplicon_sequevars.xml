@@ -8,11 +8,15 @@
     '$oligo_def_file'
     '$output_fasta'
     '$output_txt'
+    #if $safe_list
+      -s '$safe_list'
+	#end if
   ]]></command>
   <inputs>
     <param name="input_fasta" format="fasta" type="data" />
     <param name="oligo_fasta" format="fasta" type="data" />
     <param name="blast_results" format="tabular" type="data" />
+    <param name="safe_list" format="fasta" type="data" optional="true" />
   </inputs>
   <outputs>
       <data format="fasta" name="output_fasta"></data>
