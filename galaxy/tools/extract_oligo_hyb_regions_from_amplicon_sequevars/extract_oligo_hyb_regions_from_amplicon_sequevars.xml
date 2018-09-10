@@ -6,6 +6,7 @@
     python $__tool_directory__/extract_oligo_hyb_regions_from_amplicon_sequevars.py
     '$input_fasta'
     '$oligo_fasta'
+    'blast_results'
     '$output_fasta'
     '$output_txt'
     #if $safe_list
@@ -26,6 +27,7 @@
     <test>
       <param name="input_fasta" value="99_amplicon-neg_FluA_H1N1.fasta" />
       <param name="oligo_fasta" value="FluA_oligos.fasta" />
+      <param name="blast_results" value="Galaxy70-[blastn-short_99_amplicon-neg_FluA_H1N1.fasta_vs__FluA_oligos.fasta__].tabular" />
       <output name="output_fasta" value="no_safelist_hyb_site_sequevars.fasta" />
       <output name="output_txt" value="no_safelist_hyb_sites_summary.txt" />
     </test>
