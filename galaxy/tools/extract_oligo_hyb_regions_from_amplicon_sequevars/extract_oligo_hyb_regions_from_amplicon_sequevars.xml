@@ -3,7 +3,7 @@
     <requirement type="package" version="1.70">biopython</requirement>
   </requirements>
   <command detect_errors="exit_code"><![CDATA[
-    $__tool_directory__/extract_oligo_hyb_regions_from_amplicon_sequevars.py
+    python $__tool_directory__/extract_oligo_hyb_regions_from_amplicon_sequevars.py
     '$input_fasta'
     '$oligo_fasta'
     '$output_fasta'
