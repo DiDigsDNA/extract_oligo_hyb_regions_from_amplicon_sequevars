@@ -24,7 +24,6 @@
       <data format="txt" name="output_txt" type="data" ></data>
   </outputs>
   <tests>
-  	#if $safe_list
     	<test>
       	    <param name="input_fasta" value="99_amplicon-neg_FluA_H1N1.fasta" />
       	    <param name="oligo_fasta" value="FluA_oligos.fasta" />
@@ -33,7 +32,6 @@
       	    <output name="output_fasta" value="with_safelist_hyb_site_sequevars.fasta" optional="true" />
       	    <output name="output_txt" value="with_safelist_hyb_sites_summary.txt" />
     	</test>
-    #end if
        <test>
            <param name="input_fasta" value="99_amplicon-neg_FluA_H1N1.fasta" />
            <param name="oligo_fasta" value="FluA_oligos.fasta" />
