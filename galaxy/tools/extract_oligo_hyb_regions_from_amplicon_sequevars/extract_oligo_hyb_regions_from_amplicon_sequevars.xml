@@ -10,7 +10,7 @@
     '$output_fasta'
     '$output_txt'
     #if $safe_list
-      -s '$safe_list'
+    -s '$safe_list'
 	#end if
   ]]></command>
   <inputs>
@@ -20,8 +20,8 @@
     <param name="safe_list" format="fasta" type="data" optional="true" />
   </inputs>
   <outputs>
-      <data format="fasta" name="output_fasta"></data>
-      <data format="txt" name="output_txt"></data>
+      <data format="fasta" name="output_fasta" type="data" optional="true" ></data>
+      <data format="txt" name="output_txt" type="data" ></data>
   </outputs>
   <tests>
   	#if $safe_list
@@ -30,20 +30,20 @@
       	    <param name="oligo_fasta" value="FluA_oligos.fasta" />
       	    <param name="blast_results" value="Galaxy70-[blastn-short_99_amplicon-neg_FluA_H1N1.fasta_vs__FluA_oligos.fasta__].tabular" />
      	    <param name="safe_list" value="hyb_site_safelist.fasta" />
-      	    <output name="output_fasta" value="with_safelist_hyb_site_sequevars.fasta" />
+      	    <output name="output_fasta" value="with_safelist_hyb_site_sequevars.fasta" optional="true" />
       	    <output name="output_txt" value="with_safelist_hyb_sites_summary.txt" />
     	</test>
-       #end if
+    #end if
        <test>
            <param name="input_fasta" value="99_amplicon-neg_FluA_H1N1.fasta" />
            <param name="oligo_fasta" value="FluA_oligos.fasta" />
            <param name="blast_results" value="Galaxy70-[blastn-short_99_amplicon-neg_FluA_H1N1.fasta_vs__FluA_oligos.fasta__].tabular" />
-           <output name="output_fasta" value="no_safelist_hyb_site_sequevars.fasta" />
+           <output name="output_fasta" value="no_safelist_hyb_site_sequevars.fasta" optional="true" />
            <output name="output_txt" value="no_safelist_hyb_sites_summary.txt" />
        </test>
   </tests>
   <help><![CDATA[
-    Extracts theoretical oligonucleotide hybridization sites from PCR amplicon sequences in a fasta file and outputs concatenated hybridization sites to fasta.
+    Extracts oligonucleotide hybridization sites from PCR amplicons in a fasta file and outputs concatenated hybridization sites to fasta.
   ]]></help>
   <citations>
   </citations>
