@@ -20,8 +20,9 @@
     <param name="safe_list" format="fasta" type="data" optional="true" />
   </inputs>
   <outputs>
-      <data format="fasta" name="output_fasta" type="data" optional="true" ></data>
-      <data format="txt" name="output_txt" type="data" ></data>
+      <data format="txt" name="output_txt" type="data" >
+      	<discover_datasets pattern="__designation_and_ext__" directory="split" visible="true" format="fasta" type="data" />
+      </data>
   </outputs>
   <tests>
     	<test>
