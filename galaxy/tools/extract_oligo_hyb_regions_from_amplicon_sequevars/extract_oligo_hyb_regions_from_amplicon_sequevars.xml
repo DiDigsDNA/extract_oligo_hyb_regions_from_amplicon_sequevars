@@ -1,0 +1,55 @@
+<tool id="extract_oligo_hyb_regions_from_amplicon_sequevars" name="Extract Oligo Hyb Regions From Amplicon Sequevars" version="0.0.1">
+  <requirements>
+    <requirement type="package" version="1.70">biopython</requirement>
+  </requirements>
+  <command detect_errors="exit_code"><![CDATA[
+    python $__tool_directory__/extract_oligo_hyb_regions_from_amplicon_sequevars.py
+    '$input_fasta'
+    '$oligo_fasta'
+    '$blast_results'
+    report
+    #if $safe_list
+    -s '$safe_list'
+	#end if
+    ## Uncomment to switch to variant where an empty fasta file is always created (and comment out the `mkdir` and `cp` commands below)
+    ## && touch report.fasta
+    && mkdir output_fasta_dir && (cp report.fasta output_fasta_dir/ 2>/dev/null || true)
+  ]]></command>
+  <inputs>
+    <param name="input_fasta" format="fasta" type="data" label="Amplicons to search: " help="FASTA format" />
+    <param name="oligo_fasta" format="fasta" type="data" label="Oligos to find: " help="FASTA format"/>
+    <param name="blast_results" format="tabular" type="data" label="Blastn results: " help="Enter Blast results file" />
+    <param name="safe_list" format="fasta" type="data" optional="true" label="Sequevars to ignore: " help="Optional: Enter hyb site sequevars fasta" />
+  </inputs>
+  <outputs>
+      <data format="txt" name="output_txt" from_work_dir="report.txt" />
+      <!-- Uncomment to switch to variant where an empty fasta file is always created (and comment out the <data> entry below)
+      <data format="fasta" name="output_fasta" from_work_dir="report.fasta" />
+      -->
+      <data format="fasta" name="output_fasta" type="data" >
+      	<discover_datasets pattern="__designation_and_ext__" directory="output_fasta_dir" visible="true" />
+      </data>
+  </outputs>
+  <tests>
+    	<test>
+      	    <param name="input_fasta" value="99_amplicon-neg_FluA_H1N1.fasta" />
+      	    <param name="oligo_fasta" value="FluA_oligos.fasta" />
+      	    <param name="blast_results" value="Galaxy70-[blastn-short_99_amplicon-neg_FluA_H1N1.fasta_vs__FluA_oligos.fasta__].tabular" />
+     	    <param name="safe_list" value="hyb_site_safelist.fasta" />
+      	    <output name="output_fasta" value="with_safelist_hyb_site_sequevars.fasta" optional="true" />
+      	    <output name="output_txt" value="with_safelist_hyb_sites_summary.txt" />
+    	</test>
+       <test>
+           <param name="input_fasta" value="99_amplicon-neg_FluA_H1N1.fasta" />
+           <param name="oligo_fasta" value="FluA_oligos.fasta" />
+           <param name="blast_results" value="Galaxy70-[blastn-short_99_amplicon-neg_FluA_H1N1.fasta_vs__FluA_oligos.fasta__].tabular" />
+           <output name="output_fasta" value="no_safelist_hyb_site_sequevars.fasta" optional="true" />
+           <output name="output_txt" value="no_safelist_hyb_sites_summary.txt" />
+       </test>
+  </tests>
+  <help><![CDATA[
+    Extracts oligonucleotide hybridization sites from PCR amplicons in a fasta file and outputs concatenated hybridization sites to fasta.
+  ]]></help>
+  <citations>
+  </citations>
+</tool>
